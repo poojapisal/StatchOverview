@@ -6,4 +6,6 @@ import com.erp.main.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 
+	
+	public User finduserId(int userId);
 }

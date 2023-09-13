@@ -10,19 +10,38 @@ import com.erp.main.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
+
 	@Autowired
-	UserRepository ur;
+	UserRepository userRepository;
 	
 	@Override
 	public void saveData(User user) {
-		ur.save(user);
+		userRepository.save(user);
 		
 	}
 
 	@Override
 	public Iterable<User> getAllData() {
 		// TODO Auto-generated method stub
-		return ur.findAll();
+		return userRepository.findAll();
+
+	}
+	
+	
+	@Override
+	public void deleteUser(int userId) 
+	{
+		
+		userRepository.deleteById(userId);
+		
+	}
+
+	@Override
+	public User getUserData(int userId) 
+	{
+		
+		return (User) userRepository.finduserId(userId);
+
 	}
 
 }
